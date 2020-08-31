@@ -29,16 +29,44 @@ class LoginForm extends Form {
 
   render() {
     return (
-      <div>
-        <h1>Login Form</h1>
-        <form onSubmit={this.handleSubmit}>
-          {this.renderInput("email", "Email")}
-          {this.renderInput("password", "Password", "password")}
-          {this.renderButton("Login")}
-        </form>
+      <div className="content">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="mx-auto col-md-6 my-5">
+              <div className="card">
+                <div className="card-header card-header-primary">
+                  <i
+                    className="d-block mx-auto text-center 2rem material-icons"
+                    style={{ fontSize: "42px" }}
+                  >
+                    person
+                  </i>
+                  <h3 className="card-title text-center">Login Form</h3>
+                </div>
+                <div className="card-body">
+                  <form onSubmit={this.handleSubmit}>
+                    <div className="col px-5" style={this.style}>
+                      {this.renderInput("email", "Email")}
+                    </div>
+                    <div className="col px-5" style={this.style}>
+                      {this.renderInput("password", "Password", "password")}
+                    </div>
+                    <div className="col px-5 text-center">
+                      {this.renderButton("Login")}
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
+
+  style = {
+    marginBottom: "35px",
+  };
 }
 
 export default LoginForm;

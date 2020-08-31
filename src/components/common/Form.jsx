@@ -52,7 +52,12 @@ class Form extends Component {
 
   renderButton = (label) => {
     return (
-      <button disabled={this.validate()} className="btn btn-primary">
+      <button
+        type="submit"
+        disabled={this.validate()}
+        className="btn btn-primary mb-4"
+        style={{ width: "135px", height: "45px", fontSize: "16px" }}
+      >
         {label}
       </button>
     );
